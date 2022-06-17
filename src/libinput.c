@@ -801,7 +801,10 @@ libinput_event_pointer_get_scroll_value(struct libinput_event_pointer *event,
 			break;
 		}
 	}
-	return value;
+	if (event->base.type == LIBINPUT_EVENT_POINTER_SCROLL_FINGER) {
+		value *= 0.1;
+	}
+	return value; //modification
 }
 
 LIBINPUT_EXPORT double
@@ -828,7 +831,10 @@ libinput_event_pointer_get_scroll_value_v120(struct libinput_event_pointer *even
 			break;
 		}
 	}
-	return value;
+	if (event->base.type == LIBINPUT_EVENT_POINTER_SCROLL_FINGER) {
+		value *= 0.1;
+	}
+	return value; //modification
 }
 
 LIBINPUT_EXPORT enum libinput_pointer_axis_source

@@ -35,7 +35,7 @@
 #include "filter-private.h"
 
 
-#define TP_MAGIC_SLOWDOWN_FLAT 0.2968
+#define TP_MAGIC_SLOWDOWN_FLAT 1 /*0.2968*/ 
 
 struct touchpad_accelerator_flat {
 	struct motion_filter base;
@@ -89,7 +89,7 @@ accelerator_set_speed_touchpad_flat(struct motion_filter *filter,
 	assert(speed_adjustment >= -1.0 && speed_adjustment <= 1.0);
 
 	accel_filter->factor = max(0.005, 1 + speed_adjustment);
-	filter->speed_adjustment = speed_adjustment;
+	filter->speed_adjustment = speed_adjustment; /* to 3 for my touchpad */
 
 	return true;
 }
