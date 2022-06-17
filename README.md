@@ -1,3 +1,8 @@
+Configuration
+========
+
+This is a modified version of libinput which improves compatibility with certain laptop trackpads with modified pointer event scaling for smoother user experience. Working in progress to integrate changes with kde system settings package to allow dynamic adjustment of the scaling by default.
+
 libinput
 ========
 
